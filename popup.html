@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 400px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+    h2 {
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .recent-section {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f0f7ff;
+      border-radius: 8px;
+      border: 1px solid #d0e7ff;
+    }
+    .recent-link-label {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    .recent-link-url {
+      font-size: 13px;
+      color: #0066cc;
+      word-break: break-all;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .recent-link-url:hover {
+      color: #004499;
+    }
+    .recent-summary {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #d0e7ff;
+    }
+    .summary-label {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    .summary-text {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .no-link {
+      color: #999;
+      font-size: 13px;
+      font-style: italic;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+      color: #666;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .capture-btn {
+      background: #2196F3;
+    }
+    .capture-btn:hover {
+      background: #1976D2;
+    }
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      text-align: center;
+    }
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+    }
+    .status.error {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    .info {
+      margin-top: 15px;
+      padding: 10px;
+      background: #e7f3ff;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #004085;
+      line-height: 1.5;
+    }
+    .hidden {
+      display: none;
+    }
+    .info a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.info a:hover {
+  text-decoration: underline;
+  color: #004499;
+}
+  </style>
+</head>
+<body>
+  <h2>📸 LinkySnappy</h2>
+  
+  <div class="recent-section">
+    <div class="recent-link-label">최근 생성된 링크</div>
+    <div id="recentLink" class="no-link">아직 생성된 링크가 없습니다</div>
+    
+    <div id="summarySection" class="recent-summary hidden">
+      <div class="summary-label">페이지 요약</div>
+      <div id="recentSummary" class="summary-text"></div>
+    </div>
+  </div>
+  
+  <div class="input-group">
+    <label>n8n Webhook URL</label>
+    <input type="text" id="webhookUrl" placeholder="https://your-n8n.com/webhook/...">
+  </div>
+  
+  <button id="saveBtn">설정 저장</button>
+  
+  <button id="captureBtn" class="capture-btn">📸 현재 페이지 캡처하기</button>
+  
+  <div id="status" class="status hidden"></div>
+  
+  <div class="info">
+  💡 <strong>사용법:</strong><br>
+  <strong>방법 1:</strong> 텍스트 선택 → 우클릭 → "LinkySnappy로 저장"<br>
+  <strong>방법 2:</strong> 위 "현재 페이지 캡처하기"를 통해 캡처하세요<br>
+  <div style="text-align: center; margin-top: 10px; font-size: 11px; color: #666;">
+    Built with Love by <a href="https://www.haseok.com" target="_blank" style="color: #0066cc; text-decoration: none;">Hannes</a>
+  </div>
+</div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
